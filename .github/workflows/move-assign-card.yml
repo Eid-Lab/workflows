@@ -1,0 +1,21 @@
+name: Move assigned card
+on:
+  issues:
+    types:
+      - assigned
+
+# map fields with customized labels
+env:
+  doing: 🏗 En cours
+
+jobs:
+  move-assigned-card:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.GH_ACTIONS_PAT }}
+          organization: Eid-Lab
+          project_id: 1
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.doing }}
