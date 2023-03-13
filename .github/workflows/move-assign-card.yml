@@ -16,6 +16,25 @@ jobs:
         with:
           gh_token: ${{ secrets.GH_ACTIONS_PAT }}
           organization: Eid-Lab
-          project_id: 1
+          # eidlab
+          project_id: 4
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.doing }}
+
+      - uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.GH_ACTIONS_PAT }}
+          organization: Eid-Lab
+          # andrew
+          project_id: 5
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: ${{ env.doing }}
+
+      - uses: leonsteinhaeuser/project-beta-automations@v2.1.0
+        with:
+          gh_token: ${{ secrets.GH_ACTIONS_PAT }}
+          organization: Eid-Lab
+          # play like pro
+          project_id: 6
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.doing }}
